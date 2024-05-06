@@ -9,8 +9,6 @@ import torchvision.transforms as transforms
 classifier = pipeline(task="image-classification")
 
 model, preprocess, _ = open_clip.create_model_and_transforms(model_name='ViT-B/32', pretrained='openai')
-image = Image.open('./images/something.jpg')
-image_input = preprocess(image).unsqueeze(0)
 
 import open_clip
 import torch
