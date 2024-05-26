@@ -1,27 +1,14 @@
-FROM python:3.9-slim
+FROM registry.suse.com/bci/python:3.11
 
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
-RUN mkdir -p /usr/files
-
 # Set the directory as the working directory
-WORKDIR /usr/files
+WORKDIR /app
 
-RUN pip install transformers
+COPY requirements.txt ./
 
-RUN pip install Pillow
-
-RUN pip install open_clip_torch
-
-RUN pip install fastapi
-
-RUN pip install uvicorn
-
-RUN pip install pydantic
-
-RUN pip install torch
-
+RUN pip install -r requirements.txt
 
 EXPOSE 42069
 
