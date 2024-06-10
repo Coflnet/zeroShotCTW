@@ -13,10 +13,10 @@ Activating the venv
 ./venv/Scripts/activate # type "deactivate" to deactivate
 ```
 
-Installing the requirements, note pytorch must be manually installed
+Installing the requirements, note pytorch must be manually installed, order matters.
 ```bash
-pip install -r requiremnts.txt
 pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121 
+pip install -r requiremnts.txt
 ```
 
 ## Deployment
