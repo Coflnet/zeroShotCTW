@@ -8,7 +8,7 @@ Creating the venv
 ```bash
 python -m venv venv
 ```
-Activating the venv
+Activating the venv, must be done prior to executing any code. 
 ```bash
 ./venv/Scripts/activate # type "deactivate" to deactivate
 ```
