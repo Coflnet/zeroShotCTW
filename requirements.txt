@@ -2,7 +2,5 @@ fastapi==0.111.0
 open_clip_torch==2.24.0
 Pillow==10.3.0
 pydantic==2.7.1
-torch==2.3.0
-torchvision==0.18.0
 transformers==4.41.1
 uvicorn==0.29.0

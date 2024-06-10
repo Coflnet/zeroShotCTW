@@ -1,4 +1,4 @@
-FROM registry.suse.com/bci/python:3.11
+FROM pytorch/pytorch:2.3.1-cuda12.1-cudnn8-devel
 
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
