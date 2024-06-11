@@ -18,5 +18,4 @@ async def process_text(texts: List[str]) -> List[List[float]]:
 async def process_image(images: List[UploadFile] = File(...)) -> List[List[float]]:
     pil_images = [Image.open(io.BytesIO(image.file.read())) for image in images]
     embeddings = process_images(pil_images)
-
     return embeddings.detach().cpu().tolist()
