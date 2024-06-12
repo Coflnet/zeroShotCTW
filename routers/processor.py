@@ -1,5 +1,5 @@
 from fastapi import APIRouter, UploadFile, File
-from pydantic import BaseModel
+from util import files_to_pil
 from typing import List
 from PIL import Image
 from ZeroShotCTW import pipeline
@@ -16,6 +16,6 @@ async def process_texts(texts: List[str]) -> List[List[float]]:
 
 @router.post('/images')
 async def process_images(images: List[UploadFile] = File(...)) -> List[List[float]]:
-    pil_images = [Image.open(io.BytesIO(image.file.read())) for image in images]
+    pil_images = files_to_pil(images)
     embeddings = pipeline.process_images(pil_images)
     return embeddings.detach().cpu().tolist()
